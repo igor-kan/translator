@@ -1024,37 +1024,37 @@ const phoneticTranscriptions = {
     "现在几点了？": "/xiàn zài jǐ diǎn le/",
   },
   ko: {
-    안녕하세요: "/annyeonghaseyo/",
+    "안녕하세요": "/annyeonghaseyo/",
     "어떻게 지내세요?": "/eotteoke jinaeseyo/",
-    감사합니다: "/gamsahamnida/",
-    안녕히 가세요: "/annyeonghi gaseyo/",
-    좋은 아침: "/joeun achim/",
-    사랑해요: "/saranghaeyo/",
-    제 이름은: "/je ireumeun/",
+    "감사합니다": "/gamsahamnida/",
+    "안녕히 가세요": "/annyeonghi gaseyo/",
+    "좋은 아침": "/joeun achim/",
+    "사랑해요": "/saranghaeyo/",
+    "제 이름은": "/je ireumeun/",
     "화장실이 어디에 있나요?": "/hwajangsiri eodie innayo/",
-    이해가 안 돼요: "/ihaega an dwaeyo/",
-    제발: "/jebal/",
-    네: "/ne/",
-    아니요: "/aniyo/",
-    실례합니다: "/sillyehamnida/",
+    "이해가 안 돼요": "/ihaega an dwaeyo/",
+    "제발": "/jebal/",
+    "네": "/ne/",
+    "아니요": "/aniyo/",
+    "실례합니다": "/sillyehamnida/",
     "이것은 얼마인가요?": "/igeos-eun eolmaingayo/",
-    죄송합니다: "/joesonghamnida/",
+    "죄송합니다": "/joesonghamnida/",
     "지금 몇 시인가요?": "/jigeum myeot siingayo/",
   },
   he: {
-    שלום: "/shalom/",
+    "שלום": "/shalom/",
     "מה שלומך?": "/ma shlomkha/",
-    תודה: "/toda/",
-    להתראות: "/lehitraot/",
-    בוקר טוב: "/boker tov/",
+    "תודה": "/toda/",
+    "להתראות": "/lehitraot/",
+    "בוקר טוב": "/boker tov/",
     "אני אוהב אותך": "/ani ohev otkha/",
     "שמי הוא": "/shmi hu/",
     "איפה השירותים?": "/eifo ha-sherutim/",
     "אני לא מבין": "/ani lo mevin/",
-    בבקשה: "/bevakasha/",
-    כן: "/ken/",
-    לא: "/lo/",
-    סליחה: "/slikha/",
+    "בבקשה": "/bevakasha/",
+    "כן": "/ken/",
+    "לא": "/lo/",
+    "סליחה": "/slikha/",
     "כמה זה עולה?": "/kama ze ole/",
     "אני מצטער": "/ani mitzta'er/",
     "מה השעה?": "/ma ha-sha'a/",
@@ -1155,17 +1155,17 @@ export async function translateText(text: string, targetLanguage: string, altern
     tr: ["Selam, günün nasıl geçiyor?", "Merhaba, bugün kendini nasıl hissediyorsun?"],
     sw: ["Jambo, unaendeleaje leo?", "Habari yako, leo unajisikiaje?"],
     pl: ["Hej, jak ci mija dzień?", "Cześć, jak się dziś czujesz?"],
-    uk: [\"Привіт, як проходить твій день?", \"Вітаю, як ти почуваєшся сьогодні?"],
-    zu: ["Sawubona, usuku lwakho lunjani?", \"Sawubona, uzizwa kanjani namhlanje?"],
+    uk: ["Привіт, як проходить твій день?", "Вітаю, як ти почуваєшся сьогодні?"],
+    zu: ["Sawubona, usuku lwakho lunjani?", "Sawubona, uzizwa kanjani namhlanje?"],
   }
-  \
+  
   // Return the predefined translation or a modified version of the original text
   const baseTranslation = translations[targetLanguage] || `${text} (${targetLanguage})`
 
   // If alternative is requested, return a different version if available
   if (alternative && alternativeTranslations[targetLanguage] && alternativeTranslations[targetLanguage].length > 0) {
     const randomIndex = Math.floor(Math.random() * alternativeTranslations[targetLanguage].length)
-    return {\
+    return {
       text: alternativeTranslations[targetLanguage][randomIndex],
       language: targetLanguage,
     }
@@ -1259,5 +1259,4 @@ export function getPhoneticTranscription(text: string, languageCode: string) {
   }
 
   return genericPhonetics[languageCode] || "/fəˈnɛtɪk trænsˈkrɪpʃən/"
-  \
 }

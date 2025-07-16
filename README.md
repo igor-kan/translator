@@ -55,11 +55,7 @@ Visit the live application: [https://igor-kan.github.io/translator](https://igor
 
 ## 📦 Deployment
 
-This project is configured for GitHub Pages deployment:
-
-```bash
-npm run deploy
-```
+This project is automatically deployed to GitHub Pages via GitHub Actions when you push to the main branch. The deployment is configured in `.github/workflows/pages.yml`.
 
 ## 📄 License
 
